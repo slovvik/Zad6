@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="pl.slovvik.zad6.MainActivity">
+
+    <TextView
+        android:id="@+id/lighinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="ASensor dla pomiaru światła"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/light_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="ASensor światło"
+        android:onClick="showSensorParameters" />
+
+    <TextView
+        android:id="@+id/accel_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="ASensor dla pomiaru przyspieszenia"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/accel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="ASensor przyspieszenie"
+        android:onClick="showSensorParameters"/>
+
+    <TextView
+        android:id="@+id/gps_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="GPS z informacją o lokalizacji"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/gps_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="GPS"
+        android:onClick="showSensorParameters"/>
+
+    <TextView
+        android:id="@+id/compass_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Compass"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/compass_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:onClick="showSensorParameters"
+        android:text="Compass" />
+
+    <Button
+        android:id="@+id/show_all_sensors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="show all sensors"
+        android:onClick="showAllSensors"/>
+</LinearLayout>
