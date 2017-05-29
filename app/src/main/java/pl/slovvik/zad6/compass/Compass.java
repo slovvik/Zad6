@@ -41,7 +41,7 @@ public class Compass extends AppCompatActivity implements SensorEventListener {
         if (degree >= 210 && degree < 240) headingDirection = "SW";
         if (degree >= 240 && degree < 300) headingDirection = "W";
         if (degree >= 300 && degree < 330) headingDirection = "NW";
-        if (degree >= 330 && degree < 360) headingDirection = "N";
+        if (degree >= 330 && degree <= 360) headingDirection = "N";
 
         heading.setText("Heading: " + headingDirection);
         heading2.setText("Heading: " + degree + " degrees");

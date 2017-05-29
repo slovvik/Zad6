@@ -33,7 +33,7 @@ public class ASensor extends AppCompatActivity implements SensorEventListener{
                     .append(event.values[0])
                     .append(" lux");
         } else if (sensorType == Sensor.TYPE_ACCELEROMETER) {
-            builder.append("X acceleration ")
+            builder.append("X acceleration: ")
                     .append(String.format("%7.4f", event.values[0]))
                     .append("m/s\u00B2\nY acceleration: ")
                     .append(String.format("%7.4f", event.values[1]))

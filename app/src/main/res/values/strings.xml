@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Zad6</string>
+    <string name="active">Active</string>
+    <string name="un_active">UnActive</string>
+    <string name="proximity">Proximity</string>
+    <string name="heartRate">Heart Rate</string>
+    <string name="pressure">Pressure</string>
+    <string name="gyroscope">Gyroscope</string>
+    <string name="gps">GPS</string>
+    <string name="light">Light</string>
+    <string name="accelerometer">Accelerometer</string>
+    <string name="compass">Compass</string>
 </resources>

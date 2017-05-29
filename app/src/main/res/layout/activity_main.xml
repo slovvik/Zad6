@@ -12,8 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="ASensor dla pomiaru światła"
+        android:text="Light"
         android:textSize="18sp" />
 
     <Button
@@ -21,17 +20,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="ASensor światło"
-        android:onClick="showSensorParameters" />
+        android:onClick="showSensorParameters"
+        android:text="LIGHT" />
 
     <TextView
         android:id="@+id/accel_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="ASensor dla pomiaru przyspieszenia"
+        android:text="Accelerometer"
         android:textSize="18sp" />
 
     <Button
@@ -39,17 +36,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="ASensor przyspieszenie"
-        android:onClick="showSensorParameters"/>
+        android:onClick="showSensorParameters"
+        android:text="Accelerometer" />
 
     <TextView
         android:id="@+id/gps_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="GPS z informacją o lokalizacji"
+        android:text="GPS"
         android:textSize="18sp" />
 
     <Button
@@ -57,16 +52,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="GPS"
-        android:onClick="showSensorParameters"/>
+        android:onClick="showSensorParameters"
+        android:text="GPS" />
+
+    <TextView
+        android:id="@+id/gyroscope_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Gyroscope"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/pressure_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Pressure"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/heart_rate_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Heart Rate"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/proximity_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Proximity"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/compass_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
         android:text="Compass"
         android:textSize="18sp" />
 
@@ -75,7 +100,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
         android:onClick="showSensorParameters"
         android:text="Compass" />
 
@@ -84,7 +108,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="show all sensors"
-        android:onClick="showAllSensors"/>
+        android:onClick="showAllSensors"
+        android:text="show all sensors" />
 </LinearLayout>
