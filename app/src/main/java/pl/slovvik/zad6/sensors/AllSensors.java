@@ -1,9 +1,12 @@
 package pl.slovvik.zad6.sensors;
 
+import android.content.Intent;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -35,5 +38,13 @@ public class AllSensors extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, deviceSensorsNames);
         sensorsList.setAdapter(adapter);
+    }
+
+    public void showSensorData(View view) {
+        Intent intent = new Intent(this, SensorData.class);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            intent.putExtra("sensor", view.getTransitionName());
+        }
+        startActivity(intent);
     }
 }

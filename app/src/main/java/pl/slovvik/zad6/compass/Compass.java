@@ -15,52 +15,53 @@ import pl.slovvik.zad6.R;
 
 public class Compass extends AppCompatActivity implements SensorEventListener {
 
-    private SensorManager sensorManager;
-    private TextView heading;
-    private TextView heading2;
+    private ImageView image;
+    private float currentDegree = 0f;
+    private SensorManager mSensorManager;
+
+    private TextView tvHeading;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compass);
-
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        heading = (TextView) findViewById(R.id.heading);
-        heading2 = (TextView) findViewById(R.id.heading_2);
-    }
-
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        float degree = Math.round(event.values[0]);
-        String headingDirection = "";
-        if (degree >= 0 && degree < 30) headingDirection = "N";
-        if (degree >= 30 && degree < 60) headingDirection = "NE";
-        if (degree >= 60 && degree < 120) headingDirection = "E";
-        if (degree >= 120 && degree < 150) headingDirection = "SE";
-        if (degree >= 150 && degree < 210) headingDirection = "S";
-        if (degree >= 210 && degree < 240) headingDirection = "SW";
-        if (degree >= 240 && degree < 300) headingDirection = "W";
-        if (degree >= 300 && degree < 330) headingDirection = "NW";
-        if (degree >= 330 && degree <= 360) headingDirection = "N";
-
-        heading.setText("Heading: " + headingDirection);
-        heading2.setText("Heading: " + degree + " degrees");
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
+        image = (ImageView) findViewById(R.id.compass);
+        tvHeading = (TextView) findViewById(R.id.compass_info);
+        mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION), SensorManager.SENSOR_DELAY_GAME);
+        mSensorManager.registerListener(this, mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+                SensorManager.SENSOR_DELAY_GAME);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        sensorManager.unregisterListener(this);
+        mSensorManager.unregisterListener(this);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent event) {
+
+        float degree = Math.round(event.values[0]);
+        tvHeading.setText("Heading: " + Float.toString(degree) + " degrees");
+        RotateAnimation ra = new RotateAnimation(
+                currentDegree,
+                -degree,
+                Animation.RELATIVE_TO_SELF, 0.5f,
+                Animation.RELATIVE_TO_SELF,
+                0.5f);
+        ra.setDuration(210);
+        ra.setFillAfter(true);
+        image.startAnimation(ra);
+        currentDegree = -degree;
+
+    }
+
+    @Override
+    public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 }
